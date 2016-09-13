@@ -1,5 +1,5 @@
- [![Apache 2](http://img.shields.io/badge/license-Apache%202-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
- [![](https://images.microbadger.com/badges/version/janloeffler/html-demo.svg)](http://microbadger.com/images/janloeffler/html-demo)
+[![Apache 2](http://img.shields.io/badge/license-Apache%202-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
+[![](https://images.microbadger.com/badges/image/janloeffler/html-demo.svg)](http://microbadger.com/images/janloeffler/html-demo)
 
 # html-demo
 Example Webseite for testing purposes
