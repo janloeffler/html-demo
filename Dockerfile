@@ -13,7 +13,6 @@ RUN apt-get update && apt-get install -y \
 
 COPY / /var/www/html/
 
-EXPOSE 8080
 EXPOSE 80
 
 CMD ["apache2-foreground"]
