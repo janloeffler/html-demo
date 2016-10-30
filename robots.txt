@@ -1,3 +1,5 @@
-# Ganze Site für alle Robots sperren
+# robots.txt for https://www.jan-loeffler.de/
+
+# Zugriff auf alle Dateien erlauben
+
 User-agent: *
-Disallow: /
