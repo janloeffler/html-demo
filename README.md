@@ -7,14 +7,14 @@ Example Webseite for testing purposes
 
 # Build the docker image
 
-    $ docker build -t janloeffler/html-demo:0.1 .
+    $ docker build -t janloeffler/html-demo:latest -t janloeffler/html-demo:0.4 .
 
 # Check that our docker image works
 
-    $ docker run -p 80:80 -it janloeffler/html-demo:0.1
+    $ docker run -p 80:80 -it janloeffler/html-demo:0.4
 
 Visit [http://localhost/](http://localhost/)! Stop your server with **Ctrl+C**.
 
 # Upload docker image to registry
 
-    $ docker push janloeffler/html-demo:0.1
+    $ docker push janloeffler/html-demo:0.4
