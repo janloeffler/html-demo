@@ -2,19 +2,19 @@
 [![](https://images.microbadger.com/badges/image/janloeffler/html-demo.svg)](http://microbadger.com/images/janloeffler/html-demo)
 
 # html-demo
-Example Webseite for testing purposes
+Example Website for testing purposes
 
 
 # Build the docker image
 
-    $ docker build -t janloeffler/html-demo:latest -t janloeffler/html-demo:0.4 .
+    $ docker build -t janloeffler/html-demo:latest -t janloeffler/html-demo:0.5 .
 
 # Check that our docker image works
 
-    $ docker run -p 80:80 -it janloeffler/html-demo:0.4
+    $ docker run -p 80:80 -p 443:443 -it janloeffler/html-demo:0.5
 
 Visit [http://localhost/](http://localhost/)! Stop your server with **Ctrl+C**.
 
 # Upload docker image to registry
 
-    $ docker push janloeffler/html-demo:0.4
+    $ docker push janloeffler/html-demo:0.5

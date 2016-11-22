@@ -1,18 +1,21 @@
-FROM php:5.6-apache
+FROM nginx
 
-MAINTAINER Jan Löffler <mail@jlsoft.de>
+MAINTAINER Jan Löffler "mail@jlsoft.de"
 
-RUN apt-get update && apt-get install -y \
-        libfreetype6-dev \
-        libjpeg62-turbo-dev \
-        libmcrypt-dev \
-        libpng12-dev \
-    && docker-php-ext-install -j$(nproc) iconv mcrypt \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install -j$(nproc) gd
+# Upgrade everything
+RUN apt-get update && apt-get upgrade -y
 
-COPY / /var/www/html/
+# nginx site conf
+COPY config/nginx.conf /etc/nginx/nginx.conf
+COPY config/nginx-site.conf /etc/nginx/sites-available/default
 
-EXPOSE 80
+# Add website
+COPY /www /usr/share/nginx/html
 
-CMD ["apache2-foreground"]
+# forward request and error logs to docker log collector
+RUN ln -sf /dev/stdout /var/log/nginx/access.log \
+	&& ln -sf /dev/stderr /var/log/nginx/error.log
+
+EXPOSE 80 443
+
+CMD ["nginx", "-g", "daemon off;"]

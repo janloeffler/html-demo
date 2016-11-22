@@ -1,0 +1,7 @@
+webapp:
+    build: .
+    environment:
+        - DEBUG=false
+    ports:
+        - "80:80"
+        - "443:443"
